@@ -30,17 +30,17 @@ def openssl_encode(algo, key, iv):
 iv = key = [0x20, 0x15] + 14 * [0]
 
 r = openssl_encode('aes-128-cbc', key, iv)
-print('aes_cbc_decrypt')
-print(repr(r))
+#print('aes_cbc_decrypt')
+#print(repr(r))
 
 password = key
 new_key = aes_encrypt(password, key_expansion(password))
 r = openssl_encode('aes-128-ctr', new_key, iv)
-print('aes_decrypt_text 16')
-print(repr(r))
+#print('aes_decrypt_text 16')
+#print(repr(r))
 
 password = key + 16 * [0]
 new_key = aes_encrypt(password, key_expansion(password)) * (32 // 16)
 r = openssl_encode('aes-256-ctr', new_key, iv)
-print('aes_decrypt_text 32')
-print(repr(r))
+#print('aes_decrypt_text 32')
+#print(repr(r))
