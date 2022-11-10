@@ -977,7 +977,7 @@ class YoutubeDL:
         else:
             if self.params.get('no_warnings'):
                 return
-            self.to_stderr(f'{self._format_err("WARNING:", self.Styles.WARNING)} {message}', only_once)
+            #self.to_stderr(f'{self._format_err("WARNING:", self.Styles.WARNING)} {message}', only_once)
 
     def deprecation_warning(self, message, *, stacklevel=0):
         deprecation_warning(
